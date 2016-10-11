@@ -8,5 +8,6 @@ target 'CodeLeisure' do
 
 pod 'SnapKit', '~>0.0'
   # Pods for CodeLeisure
-
+pod 'JKCategories'
+pod 'Alamofire', '~> 3.0'
 end

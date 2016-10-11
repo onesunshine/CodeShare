@@ -12,6 +12,9 @@
 		BCF936EA1DAD03BA00B179C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCF936E81DAD03BA00B179C1 /* Main.storyboard */; };
 		BCF936EC1DAD03BA00B179C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF936EB1DAD03BA00B179C1 /* Assets.xcassets */; };
 		BCF936EF1DAD03BA00B179C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCF936ED1DAD03BA00B179C1 /* LaunchScreen.storyboard */; };
+		BCF936FF1DAD162700B179C1 /* CSTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF936FE1DAD162700B179C1 /* CSTabBarViewController.swift */; };
+		BCF937011DAD167F00B179C1 /* CSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF937001DAD167F00B179C1 /* CSLoginViewController.swift */; };
+		BCF937031DAD16A000B179C1 /* CSRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF937021DAD16A000B179C1 /* CSRegisterViewController.swift */; };
 		EA3F3DD64436972C31F85A54 /* Pods_CodeLeisure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAE16CDC17363B38B9A23A4 /* Pods_CodeLeisure.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +27,9 @@
 		BCF936EB1DAD03BA00B179C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCF936EE1DAD03BA00B179C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCF936F01DAD03BA00B179C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCF936FE1DAD162700B179C1 /* CSTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSTabBarViewController.swift; sourceTree = "<group>"; };
+		BCF937001DAD167F00B179C1 /* CSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSLoginViewController.swift; sourceTree = "<group>"; };
+		BCF937021DAD16A000B179C1 /* CSRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSRegisterViewController.swift; sourceTree = "<group>"; };
 		BD39F7135C5335470A07D096 /* Pods-CodeLeisure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLeisure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLeisure/Pods-CodeLeisure.debug.xcconfig"; sourceTree = "<group>"; };
 		D5DE904761658CC4EACF62F5 /* Pods-CodeLeisure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLeisure.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLeisure/Pods-CodeLeisure.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +76,9 @@
 		BCF936E31DAD03BA00B179C1 /* CodeLeisure */ = {
 			isa = PBXGroup;
 			children = (
+				BCF936F91DAD09ED00B179C1 /* Model */,
+				BCF936F81DAD09DD00B179C1 /* View */,
+				BCF936F61DAD09C700B179C1 /* Controllers */,
 				BCF936E41DAD03BA00B179C1 /* AppDelegate.swift */,
 				BCF936E61DAD03BA00B179C1 /* ViewController.swift */,
 				BCF936E81DAD03BA00B179C1 /* Main.storyboard */,
@@ -78,6 +87,30 @@
 				BCF936F01DAD03BA00B179C1 /* Info.plist */,
 			);
 			path = CodeLeisure;
+			sourceTree = "<group>";
+		};
+		BCF936F61DAD09C700B179C1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BCF937001DAD167F00B179C1 /* CSLoginViewController.swift */,
+				BCF936FE1DAD162700B179C1 /* CSTabBarViewController.swift */,
+				BCF937021DAD16A000B179C1 /* CSRegisterViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BCF936F81DAD09DD00B179C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BCF936F91DAD09ED00B179C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		FE4848268F5D71C161204A77 /* Frameworks */ = {
@@ -210,7 +243,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF937011DAD167F00B179C1 /* CSLoginViewController.swift in Sources */,
+				BCF936FF1DAD162700B179C1 /* CSTabBarViewController.swift in Sources */,
 				BCF936E71DAD03BA00B179C1 /* ViewController.swift in Sources */,
+				BCF937031DAD16A000B179C1 /* CSRegisterViewController.swift in Sources */,
 				BCF936E51DAD03BA00B179C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
