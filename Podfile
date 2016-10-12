@@ -15,7 +15,7 @@ pod 'Alamofire', '~> 3.0'
 
 pod 'DACircularProgress'
 #Mob产品公共库
-pod 'MOBFoundation_IDFA'
+pod 'MOBFoundation_IDFA'mei
 #短信发送 SDK
 pod 'SMSSDK'
 
