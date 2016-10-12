@@ -9,12 +9,37 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DACircularProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FDFullscreenPopGesture.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>IQKeyboardManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JKCategories.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-CodeLeisure.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Result.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,12 +52,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>06AAA0611FA9E49A133593E720C7BE29</key>
+		<key>008B9AEAA1419F1216DC1A4E03150EC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2C4BD96D2C77F1A20C62689BF270E05B</key>
+		<key>0E947C90F48562EACD07FA1890B42E9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +67,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>303B3AC6DD17B1EE7D98EF8BF8898BEB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>46111929F89F65BDFCC8D33D1AF9B9B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5855D213D188EE14086C1F827DE7B1FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6683EDD60EC1F432CD47FD676CE4143F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94624EC6C9739263AA965CFE2D8933F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

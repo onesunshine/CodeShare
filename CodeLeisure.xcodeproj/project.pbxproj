@@ -15,11 +15,13 @@
 		BCF936FF1DAD162700B179C1 /* CSTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF936FE1DAD162700B179C1 /* CSTabBarViewController.swift */; };
 		BCF937011DAD167F00B179C1 /* CSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF937001DAD167F00B179C1 /* CSLoginViewController.swift */; };
 		BCF937031DAD16A000B179C1 /* CSRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF937021DAD16A000B179C1 /* CSRegisterViewController.swift */; };
+		BCF937051DADD0F800B179C1 /* CodeLeisure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF937041DADD0F800B179C1 /* CodeLeisure.swift */; };
 		EA3F3DD64436972C31F85A54 /* Pods_CodeLeisure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAE16CDC17363B38B9A23A4 /* Pods_CodeLeisure.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7EAE16CDC17363B38B9A23A4 /* Pods_CodeLeisure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeLeisure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1EF17B1DADDD760009F79C /* CodeShareHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeShareHeader.h; sourceTree = "<group>"; };
 		BCF936E11DAD03BA00B179C1 /* CodeLeisure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeLeisure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF936E41DAD03BA00B179C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCF936E61DAD03BA00B179C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +32,7 @@
 		BCF936FE1DAD162700B179C1 /* CSTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSTabBarViewController.swift; sourceTree = "<group>"; };
 		BCF937001DAD167F00B179C1 /* CSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSLoginViewController.swift; sourceTree = "<group>"; };
 		BCF937021DAD16A000B179C1 /* CSRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSRegisterViewController.swift; sourceTree = "<group>"; };
+		BCF937041DADD0F800B179C1 /* CodeLeisure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeLeisure.swift; sourceTree = "<group>"; };
 		BD39F7135C5335470A07D096 /* Pods-CodeLeisure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLeisure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLeisure/Pods-CodeLeisure.debug.xcconfig"; sourceTree = "<group>"; };
 		D5DE904761658CC4EACF62F5 /* Pods-CodeLeisure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLeisure.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLeisure/Pods-CodeLeisure.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +61,7 @@
 		BCF936D81DAD03BA00B179C1 = {
 			isa = PBXGroup;
 			children = (
+				BC1EF17B1DADDD760009F79C /* CodeShareHeader.h */,
 				BCF936E31DAD03BA00B179C1 /* CodeLeisure */,
 				BCF936E21DAD03BA00B179C1 /* Products */,
 				839D5C8610A68365B656671E /* Pods */,
@@ -81,6 +85,7 @@
 				BCF936F61DAD09C700B179C1 /* Controllers */,
 				BCF936E41DAD03BA00B179C1 /* AppDelegate.swift */,
 				BCF936E61DAD03BA00B179C1 /* ViewController.swift */,
+				BCF937041DADD0F800B179C1 /* CodeLeisure.swift */,
 				BCF936E81DAD03BA00B179C1 /* Main.storyboard */,
 				BCF936EB1DAD03BA00B179C1 /* Assets.xcassets */,
 				BCF936ED1DAD03BA00B179C1 /* LaunchScreen.storyboard */,
@@ -247,6 +252,7 @@
 				BCF936FF1DAD162700B179C1 /* CSTabBarViewController.swift in Sources */,
 				BCF936E71DAD03BA00B179C1 /* ViewController.swift in Sources */,
 				BCF937031DAD16A000B179C1 /* CSRegisterViewController.swift in Sources */,
+				BCF937051DADD0F800B179C1 /* CodeLeisure.swift in Sources */,
 				BCF936E51DAD03BA00B179C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,8 +371,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CodeLeisure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Mr-Apple.CodeLeisure";
+				PRODUCT_BUNDLE_IDENTIFIER = com.1000phone.CodeShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CodeShareheader.h";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Debug;
 		};
@@ -377,8 +385,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CodeLeisure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Mr-Apple.CodeLeisure";
+				PRODUCT_BUNDLE_IDENTIFIER = com.1000phone.CodeShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CodeShareheader.h";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Release;
 		};

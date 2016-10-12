@@ -8,10 +8,13 @@
 
 import UIKit
 import Alamofire
+import ReactiveCocoa
+import JKCategories
 class CSRegisterViewController: UIViewController {
-
+    dynamic var t = 60
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = UIColor.whiteColor()
         self.title = "注册"
         // Do any additional setup after loading the view.
@@ -49,7 +52,8 @@ class CSRegisterViewController: UIViewController {
             make.height.equalTo(48)
             make.top.equalTo(username.snp_bottom)
         }
-        
+//        username.text = "18192517406"
+//        password.text = "111111"
         let leftPass = UIView.init()
         let leftPassImage = UIImageView.init(image: UIImage.init(named: "密码图标"))
         password.leftView = leftPass
@@ -106,6 +110,8 @@ class CSRegisterViewController: UIViewController {
             make.height.equalTo(48)
             make.width.equalTo(120)
         }
+        
+       
         codeRight.addSubview(codeRightBtn)
         codeRightBtn.snp_makeConstraints { (make) in
             make.center.equalTo(0)
@@ -136,13 +142,78 @@ class CSRegisterViewController: UIViewController {
             make.height.equalTo(48)
             make.top.equalTo(code.snp_bottom).offset(100)
         }
+        codeRightBtn.enabled = false
+        registerBtn.enabled = false
+//        username.jk_handleControlEvents(UIControlEvents.EditingChanged) { (sender) in
+//            code.enabled = username.text?.lengthOfBytesUsingEncoding(NSStringEncoding.init(NSUTF8StringEncoding)) == 11
+//        }
+        
+        
+        //用rac 订阅输入框改变的信号，根据输入内容，改变按钮的状态
+        username.rac_textSignal().subscribeNext { (sender) in
+            
+            let name = sender as! NSString
+           codeRightBtn.enabled = name.length == 11
+            if name.length >= 11{
+//                password.becomeFirstResponder()
+            }
+        }
+        //将几个信号合并为一个信号，订阅并改变主持按钮的状态
+        //冷信号
+        username.rac_textSignal().combineLatestWith(password.rac_textSignal()).combineLatestWith(code.rac_textSignal()).subscribeNext { (sender) in
+            registerBtn.enabled = ((username.text! as NSString).length == 11 && (password.text! as NSString).length >= 6 && (code.text! as NSString).length == 4)
+        }
+//热信号
+//        username.rac_textSignal().toSignalProducer().combineLatestWith(password.rac_textSignal().toSignalProducer()).combineLatestWith(code.rac_textSignal().toSignalProducer()).startWithNext { (signal1, signal2) in
+//            
+//        }
+    
+        registerBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (sender) in
+        print(sender as! UIButton)
+        }
+        //也可以把按钮的点击事件当作信号来订阅(kvo)
+        //使用MVC的思想，如果数据改变了，界面跟着变
+       self.rac_valuesForKeyPath("t", observer: self).subscribeNext { (t) in
+        print(t)
+        codeRightBtn.enabled = self.t == -1
+        if self.t == -1{
+            codeRightBtn.setTitle("获取验证码", forState: UIControlState.Normal)
+        }else{
+            codeRightBtn.setTitle("\(self.t)秒后重新发送", forState: UIControlState.Normal)
+
+        }
+        }
+         //获取验证码
+        codeRightBtn.jk_handleControlEvents(UIControlEvents.TouchUpInside) { (sender) in
+            self.t = 60
+            codeRightBtn.enabled = false
+            codeRightBtn
+             SMSSDK.getVerificationCodeByMethod(SMSGetCodeMethod.init(0), phoneNumber: username.text, zone: "86", customIdentifier: nil) { (error) in
+                if error != nil{
+                    print(error)
+                    self.t = -1
+                   
+                }else{
+                    
+                    
+                   
+                    NSTimer.jk_scheduledTimerWithTimeInterval(1.0, block: { self.t = self.t - 1
+
+                        }, repeats: true)
+
+                   
+                }
+                
+        }
+    }
+        
         // 注册
 //        		service=User.Register&phone=18192517406&password=111111&verificationCode=1234
       registerBtn.jk_handleControlEvents(UIControlEvents.TouchUpInside) { (sender) in
-            Alamofire.request(.POST, "https://www.1000phone.tk", parameters: [
+            Alamofire.request(.POST, "https://www.1000phone.tk",parameters: [
                 "service": "User.Register",
                 "phone": username.text!,
-                "password": password.text!,
+                "password": (password.text! as NSString).jk_md5String,
                 "verificationCode": code.text!,
                 ], encoding: ParameterEncoding.URLEncodedInURL, headers: nil).responseJSON(completionHandler: { (response) in
                     // 如果请求成功
@@ -160,7 +231,6 @@ class CSRegisterViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
